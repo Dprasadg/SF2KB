@@ -1,0 +1,9 @@
+﻿Case Owner,Account Name,Subject,Date/Time Opened,Age (Days),SubTopic,Topic,Next Steps,Troubleshooting Steps Taken,Product,Severity Level,Resolution,Description
+Durga Prasad ,Morgan,Audits running for over - 7-9 days,19/02/26 9:24,7,Audits,Audit Center,NA,Restarted the jboss services and Resumed the Audit,Digital Safe,Level 4,Resumed the Audit,Audit was stuck
+Durga Prasad ,Morgan,Audits running for over - 7-9 days,19/02/26 9:24,7,Audits,Audit Center,NA,Restarted the jboss services and Resumed the Audit,Digital Safe,Level 4,Resumed the Audit,Audit was stuck
+Durga Prasad ,Morgan,Audits running for over - 7-9 days,19/02/26 9:24,7,Audits,Audit Center,NA,Restarted the jboss services and Resumed the Audit,Digital Safe,Level 4,Resumed the Audit,Audit was stuck
+Durga Prasad ,Morgan,Unable to Login,19/02/26 10:24,7,Login Issue,DS UI,NA,"Permission issue, provided the required permission",Digital Safe,Level 4,Assigned Permission to the user,Login Failure
+Durga Prasad ,Morgan,Unable to Login,19/02/26 10:24,7,Login Issue,DS UI,NA,"Permission issue, provided the required permission",Digital Safe,Level 4,Assigned Permission to the user,Login Failed
+Durga Prasad ,Morgan,Unable to Login,19/02/26 11:24,7,Login Issue,DS UI,NA,"Permission issue, provided the required permission",Digital Safe,Level 4,Assigned Permission to the user,Unable to Login to DSUI
+Durga Prasad ,Morgan,Unable to Login,19/02/26 8:24,7,Login Issue,DS UI,NA,"Permission issue, provided the required permission",Digital Safe,Level 4,Assigned Permission to the user,Login error in DSUI
+Durga Prasad ,Morgan,Unable to Login,19/02/26 7:24,7,Login Issue,DS UI,NA,"Permission issue, provided the required permission",Digital Safe,Level 4,Assigned Permission to the user,DSUI login failed
