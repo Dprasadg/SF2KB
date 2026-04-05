@@ -1,0 +1,5 @@
+KB_Articles/
+*.md
+*.csv
+.DS_Store
+.venv

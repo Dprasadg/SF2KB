@@ -1,0 +1,139 @@
+[
+  {
+    "title": "Audits Running for Over 7-9 Days",
+    "summary": "Audits may get stuck and run for over 7-9 days in the Digital Safe Audit Center.",
+    "symptoms": [
+      "Audits do not complete within expected timeframe",
+      "Audit process appears to be stuck"
+    ],
+    "applies_to": [
+      "Digital Safe",
+      "Audit Center"
+    ],
+    "resolution": [
+      "Restart the JBoss services",
+      "Resume the audit"
+    ],
+    "cause": "Unknown, but restarting JBoss services resolves the issue",
+    "additional_info": "",
+    "keywords": [
+      "digital safe",
+      "audit center",
+      "stuck audits"
+    ],
+    "_retrieval_text": "Audits Running for Over 7-9 Days Audits may get stuck and run for over 7-9 days in the Digital Safe Audit Center. Unknown, but restarting JBoss services resolves the issue Audits do not complete within expected timeframe Audit process appears to be stuck Restart the JBoss services Resume the audit digital safe audit center stuck audits"
+  },
+  {
+    "title": "Unable to Login to Digital Safe",
+    "summary": "Login failure to digital safe due to permission issue.",
+    "symptoms": [
+      "Error message appears during login attempt",
+      "User is unable to access digital safe"
+    ],
+    "applies_to": [
+      "digital safe"
+    ],
+    "resolution": [
+      "Check the user's assigned permissions and ensure they have the required level of access",
+      "Assign the necessary permission to the user if it has not been done already"
+    ],
+    "cause": "Permission issue",
+    "additional_info": "",
+    "keywords": [
+      "digital safe",
+      "login failure",
+      "permission issue"
+    ],
+    "_retrieval_text": "Unable to Login to Digital Safe Login failure to digital safe due to permission issue. Permission issue Error message appears during login attempt User is unable to access digital safe Check the user's assigned permissions and ensure they have the required level of access Assign the necessary permission to the user if it has not been done already digital safe login failure permission issue"
+  },
+  {
+    "title": "Enterprise Archive - Network Data Stats Required for Service Review",
+    "summary": "This article describes the issue of network data stats required for a service review.",
+    "symptoms": [
+      "Network data stats are not available for the service review",
+      "The service review meeting is delayed due to lack of network data stats"
+    ],
+    "applies_to": [
+      "product: enterprise archive"
+    ],
+    "resolution": [
+      "Contact the support team to request the necessary network data stats",
+      "Provide the required information and timeframe for the support team to retrieve the stats"
+    ],
+    "cause": "",
+    "additional_info": "",
+    "keywords": [
+      "network data stats",
+      "service review"
+    ],
+    "_retrieval_text": "Enterprise Archive - Network Data Stats Required for Service Review This article describes the issue of network data stats required for a service review. Network data stats are not available for the service review The service review meeting is delayed due to lack of network data stats Contact the support team to request the necessary network data stats Provide the required information and timeframe for the support team to retrieve the stats network data stats service review"
+  },
+  {
+    "title": "Enterprise Archive UI Not Accessible",
+    "summary": "The Enterprise Archive UI may be unavailable due to various reasons.",
+    "symptoms": [
+      "Error messages or timeouts when trying to access the Enterprise Archive UI",
+      "UI not loading or displaying correctly"
+    ],
+    "applies_to": [
+      "product: enterprise archive"
+    ],
+    "resolution": [
+      "Check the system logs for any errors or issues that may be causing the problem.",
+      "Try restarting the Enterprise Archive service or contacting your administrator if you have one."
+    ],
+    "cause": "Unknown, but may be due to various reasons such as server downtime, network connectivity issues, or software configuration problems",
+    "additional_info": "",
+    "keywords": [
+      "Enterprise Archive",
+      "UI not accessible"
+    ],
+    "_retrieval_text": "Enterprise Archive UI Not Accessible The Enterprise Archive UI may be unavailable due to various reasons. Unknown, but may be due to various reasons such as server downtime, network connectivity issues, or software configuration problems Error messages or timeouts when trying to access the Enterprise Archive UI UI not loading or displaying correctly Check the system logs for any errors or issues that may be causing the problem. Try restarting the Enterprise Archive service or contacting your administrator if you have one. Enterprise Archive UI not accessible"
+  },
+  {
+    "title": "Setting Global Retention Value/Date for Tier 2",
+    "summary": "This article provides steps to set or extend the global retention value/date for Tier 2 in Enterprise Archive.",
+    "symptoms": [
+      "Retention policy not updated",
+      "Data retention date not changed"
+    ],
+    "applies_to": [
+      "Enterprise Archive"
+    ],
+    "resolution": [
+      "Log in to the Enterprise Archive UI as an administrator",
+      "Navigate to the Administration section and select 'Retention Policy' under Tier 2",
+      "Enter the desired global retention value/date (e.g., September 1, 2025) and click 'Save'"
+    ],
+    "cause": "Insufficient configuration of global retention policy",
+    "additional_info": "",
+    "keywords": [
+      "Enterprise Archive",
+      "Tier 2 Retention Policy"
+    ],
+    "_retrieval_text": "Setting Global Retention Value/Date for Tier 2 This article provides steps to set or extend the global retention value/date for Tier 2 in Enterprise Archive. Insufficient configuration of global retention policy Retention policy not updated Data retention date not changed Log in to the Enterprise Archive UI as an administrator Navigate to the Administration section and select 'Retention Policy' under Tier 2 Enter the desired global retention value/date (e.g., September 1, 2025) and click 'Save' Enterprise Archive Tier 2 Retention Policy"
+  },
+  {
+    "title": "Remove CNR Messages from Insights Dashboard",
+    "summary": "CNR messages to be removed from insights dashboard as of various dates.",
+    "symptoms": [
+      "Messages displayed in the insights dashboard",
+      "No data to show message displayed"
+    ],
+    "applies_to": [
+      "product: enterprise archive"
+    ],
+    "resolution": [
+      "Check the backend for capture not received and unreconciled messages",
+      "Remove CNR messages from the insights dashboard as of the specified dates"
+    ],
+    "cause": "Root cause unknown",
+    "additional_info": "",
+    "keywords": [
+      "CNR",
+      "Insights Dashboard",
+      "Enterprise Archive"
+    ],
+    "_retrieval_text": "Remove CNR Messages from Insights Dashboard CNR messages to be removed from insights dashboard as of various dates. Root cause unknown Messages displayed in the insights dashboard No data to show message displayed Check the backend for capture not received and unreconciled messages Remove CNR messages from the insights dashboard as of the specified dates CNR Insights Dashboard Enterprise Archive"
+  }
+]

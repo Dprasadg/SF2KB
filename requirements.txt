@@ -1,0 +1,10 @@
+pandas
+numpy
+sentence-transformers
+scikit-learn
+faiss-cpu
+hdbscan
+ollama
+python-multipart
+fastapi
+uvicorn
