@@ -2,6 +2,7 @@ import faiss
 import numpy as np
 import json
 from pathlib import Path
+import os
 from typing import Any
 
 from backend.config import FAISS_INDEX_PATH, FAISS_METADATA_PATH
@@ -66,7 +67,12 @@ class FAISSStore:
         self.metadata = []
         self._save()
 
-    def add(self, vectors: Any, metadata_list: list[dict[str, Any]]) -> None:
+    def add(
+        self,
+        vectors: Any,
+        metadata_list: list[dict[str, Any]],
+        persist: bool = True,
+    ) -> None:
         vectors = np.asarray(vectors, dtype="float32")
         if vectors.ndim == 1:
             vectors = vectors.reshape(1, -1)
@@ -83,7 +89,8 @@ class FAISSStore:
         self.index.add(vectors)
         self.metadata.extend(metadata_list)
 
-        self._save()
+        if persist:
+            self.save()
 
     def search(self, vector: Any, k: int = 3) -> list[dict[str, Any]]:
         if k <= 0:
@@ -115,10 +122,20 @@ class FAISSStore:
 
         return results
 
-    def _save(self) -> None:
+    def save(self) -> None:
         self.index_path.parent.mkdir(parents=True, exist_ok=True)
         self.metadata_path.parent.mkdir(parents=True, exist_ok=True)
-        faiss.write_index(self.index, str(self.index_path))
 
-        with self.metadata_path.open("w", encoding="utf-8") as f:
+        index_tmp = self.index_path.with_suffix(f"{self.index_path.suffix}.tmp")
+        metadata_tmp = self.metadata_path.with_suffix(f"{self.metadata_path.suffix}.tmp")
+
+        faiss.write_index(self.index, str(index_tmp))
+
+        with metadata_tmp.open("w", encoding="utf-8") as f:
             json.dump(self.metadata, f, indent=2)
+
+        os.replace(index_tmp, self.index_path)
+        os.replace(metadata_tmp, self.metadata_path)
+
+    def _save(self) -> None:
+        self.save()

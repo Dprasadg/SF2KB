@@ -3,12 +3,13 @@ from pathlib import Path
 
 # Base paths
 PROJECT_ROOT = Path(__file__).resolve().parent
+REPO_ROOT = PROJECT_ROOT.parent
 BASE_DIR = PROJECT_ROOT
 DATA_DIR = Path(os.getenv("SF2KB_DATA_DIR", PROJECT_ROOT / "data"))
 
 # Input file
 CSV_FILE_PATH = Path(
-    os.getenv("SF2KB_CSV_FILE_PATH", PROJECT_ROOT / "SFExportedData" / "SampleData.csv")
+    os.getenv("SF2KB_CSV_FILE_PATH", REPO_ROOT / "SFExportedData" / "SampleData.csv")
 )
 
 # Logging
@@ -16,12 +17,14 @@ LOG_DIR = Path(os.getenv("SF2KB_LOG_DIR", DATA_DIR / "logs"))
 LOG_FILE = Path(os.getenv("SF2KB_LOG_FILE", LOG_DIR / "sf2kb.log"))
 
 # Knowledge base store
-KB_STORE_PATH = Path(os.getenv("SF2KB_KB_STORE_PATH", PROJECT_ROOT / "KB_Articles" / "kb_articles.json"))
+KB_STORE_PATH = Path(
+    os.getenv("SF2KB_KB_STORE_PATH", PROJECT_ROOT / "KB_Articles" / "kb_articles.json")
+)
 
 # thresholds
 SIMILARITY_THRESHOLD = float(os.getenv("SF2KB_SIMILARITY_THRESHOLD", "0.95"))
 KB_DUPLICATE_THRESHOLD = 0.85
-MIN_CLUSTER_SIZE = int(os.getenv("SF2KB_MIN_CLUSTER_SIZE", "4"))
+MIN_CLUSTER_SIZE = int(os.getenv("SF2KB_MIN_CLUSTER_SIZE", "2"))
 HDBSCAN_MIN_SAMPLES = int(os.getenv("SF2KB_HDBSCAN_MIN_SAMPLES", "1"))
 ENABLE_PRE_CLUSTER_DEDUP = os.getenv("SF2KB_ENABLE_PRE_CLUSTER_DEDUP", "false").lower() == "true"
 
@@ -38,3 +41,19 @@ FAISS_INDEX_PATH = Path(os.getenv("SF2KB_FAISS_INDEX_PATH", FAISS_DIR / "index.f
 FAISS_METADATA_PATH = Path(
     os.getenv("SF2KB_FAISS_METADATA_PATH", FAISS_DIR / "metadata.json")
 )
+KB_RUNTIME_METADATA_PATH = Path(
+    os.getenv("SF2KB_KB_RUNTIME_METADATA_PATH", FAISS_DIR / "kb_runtime_metadata.json")
+)
+
+# uploads
+MAX_UPLOAD_BYTES = int(os.getenv("SF2KB_MAX_UPLOAD_BYTES", str(50 * 1024 * 1024)))
+
+# API
+CORS_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv(
+        "SF2KB_CORS_ORIGINS",
+        "http://localhost:5173,http://127.0.0.1:5173",
+    ).split(",")
+    if origin.strip()
+]

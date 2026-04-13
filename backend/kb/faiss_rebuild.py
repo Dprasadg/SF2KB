@@ -15,9 +15,8 @@ Features:
 import json
 import shutil
 from pathlib import Path
-from typing import Optional
 
-from backend.config import KB_STORE_PATH, DATA_DIR
+from backend.config import KB_STORE_PATH, FAISS_DIR
 from backend.embeddings.embedder import HybridEmbedder
 from backend.embeddings.vector_store import FAISSStore
 from backend.rag.retrieval import build_kb_retrieval
@@ -85,8 +84,9 @@ def rebuild_faiss_from_kb(dry_run: bool = False) -> dict:
             kb_metadata["_retrieval_text"] = retrieval_text
             # Note: _cluster_vec not available for old KBs (only in new uploads)
             
-            # Add to new index
-            vector_store.add([kb_vec], [kb_metadata])
+            # Add to the in-memory rebuild index. Persist only after backup
+            # and only when this is not a dry run.
+            vector_store.add([kb_vec], [kb_metadata], persist=False)
             processed += 1
             
             if i % 10 == 0:
@@ -97,7 +97,7 @@ def rebuild_faiss_from_kb(dry_run: bool = False) -> dict:
             errors += 1
     
     # Backup existing FAISS if present
-    faiss_dir = Path(DATA_DIR) / "faiss"
+    faiss_dir = Path(FAISS_DIR)
     backup_path = None
     
     if faiss_dir.exists() and any(faiss_dir.glob("*")):
@@ -116,8 +116,8 @@ def rebuild_faiss_from_kb(dry_run: bool = False) -> dict:
         print(f"\n[DRY RUN] Would persist {processed} KB vectors to: {faiss_dir}")
         print("[DRY RUN] No files modified. Re-run without --dry-run to apply changes.")
     else:
-        vector_store.index_path = str(faiss_dir / "index.faiss")
-        vector_store.metadata_path = str(faiss_dir / "metadata.json")
+        vector_store.index_path = faiss_dir / "index.faiss"
+        vector_store.metadata_path = faiss_dir / "metadata.json"
         vector_store.save()
         print(f"\n[SUCCESS] New FAISS index persisted with {processed} KB vectors")
     

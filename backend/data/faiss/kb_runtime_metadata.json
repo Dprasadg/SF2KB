@@ -1,32 +1,6 @@
 [
   {
-    "title": "Document Uploads Fail for Files Over 100 MB in Production \u2013 APAC Region",
-    "summary": "Large file uploads fail with a 'request size exceeds limit' error message. This issue affects document uploads in the production environment of the APAC region.",
-    "symptoms": [
-      "File upload fails immediately for files over 100 MB",
-      "Error: Upload failed \u2013 request size exceeds limit"
-    ],
-    "applies_to": [
-      "Digital Safe",
-      "Production \u2013 APAC Region"
-    ],
-    "resolution": [
-      "Verify the document upload limit configured in application settings.",
-      "Check the web server configuration for request size limits."
-    ],
-    "cause": "The web server request size limit was incorrectly configured to 100MB, preventing larger files from being uploaded.",
-    "additional_info": "This issue may occur after recent infrastructure changes or maintenance activities. Increasing the Apache request limit resolved the issue.",
-    "internal_to_smarsh": "",
-    "keyword_variations": [
-      "large file upload",
-      "request size exceeds limit"
-    ],
-    "visibility": "Visible in Internal App",
-    "validation_state": "Not Validated",
-    "keywords": [
-      "large file upload",
-      "request size exceeds limit"
-    ],
+    "kb_id": "5bd06b6a64fe4e8daee9f3003e8eb127",
     "_retrieval_text": "Document Uploads Fail for Files Over 100 MB in Production \u2013 APAC Region Large file uploads fail with a 'request size exceeds limit' error message. This issue affects document uploads in the production environment of the APAC region. The web server request size limit was incorrectly configured to 100MB, preventing larger files from being uploaded. This issue may occur after recent infrastructure changes or maintenance activities. Increasing the Apache request limit resolved the issue. File upload fails immediately for files over 100 MB Error: Upload failed \u2013 request size exceeds limit Digital Safe Production \u2013 APAC Region Verify the document upload limit configured in application settings. Check the web server configuration for request size limits. large file upload request size exceeds limit issue: user is unable to upload documents larger than 100mb. | environment: production \u2013 apac region | description: customer reports that document uploads fail when attempting to upload files larger than 100mb. the upload progress completes but the system throws an error message saying \u201cupload failed \u2013 request size exceeds limit.\u201d the issue started after a recent server maintenance activity. | symptoms: files below 100mb upload successfully files larger than 100mb fail immediately after upload error displayed in ui no visible error message in application logs | troubleshooting: verified the document upload limit configured in application settings. checked the web server configuration for request size limits. confirmed that the apache configuration parameter limitrequestbody was set to 104857600 (100mb). reviewed recent infrastructure changes during the maintenance window. increased the apache request limit to 524288000 (500mb). restarted the apache service. retested document upload with a 250mb file. | root cause observed: the web server request size limit was incorrectly configured to 100mb preventing larger files from being uploaded. issue: large file uploads failing. | environment: production \u2013 apac | description: customer unable to upload files larger than 120mb. upload attempts fail with request size error. | root cause observed: apache request body limit set too low. issue: upload failing. | description: upload failing.customer said large file failed. | troubleshooting: asked user to try smaller file. Increasing the Apache request limit resolved the issue. Files up to 500MB now upload successfully. Verified the document upload limit configured in application settings. Checked the web server configuration for request size limits. Confirmed that the Apache configuration parameter LimitRequestBody was set to 104857600 (100MB). Reviewed recent infrastructure changes during the maintenance window. Increased the Apache request limit to 524288000 (500MB). Restarted the Apache service. Retested document upload with a 250MB file. Upload size limit increased on the Apache server Upload worked with smaller file. Asked user to try smaller file.",
     "_cluster_vec": [
       0.007253916468471289,
@@ -416,35 +390,7 @@
     ]
   },
   {
-    "title": "Login Fails After Password Reset for Users in Production \u2013 US Region",
-    "summary": "Users are unable to log in after performing a password reset, receiving an 'invalid credentials' error despite successful password reset process. This issue affects users in the production \u2013 US region.",
-    "symptoms": [
-      "Password reset email received and password reset is successful, but login attempt fails with authentication error",
-      "Authentication cache was not refreshing after password updates"
-    ],
-    "applies_to": [
-      "Digital Safe",
-      "Production \u2013 US Region"
-    ],
-    "resolution": [
-      "Restart the authentication service",
-      "Clear the authentication cache and restart the authentication service if issues persist"
-    ],
-    "cause": "Authentication cache was not refreshing after password updates, causing login failures.",
-    "additional_info": "In some cases, clearing the authentication cache and restarting the authentication service may resolve the issue automatically. If not, users can try resetting their password and attempting to log in again.",
-    "internal_to_smarsh": "",
-    "keyword_variations": [
-      "password reset",
-      "login failure",
-      "authentication error"
-    ],
-    "visibility": "Visible in Internal App",
-    "validation_state": "Not Validated",
-    "keywords": [
-      "password reset",
-      "login failure",
-      "authentication error"
-    ],
+    "kb_id": "d17ec2d80760497b8cff5d1aaace30ec",
     "_retrieval_text": "Login Fails After Password Reset for Users in Production \u2013 US Region Users are unable to log in after performing a password reset, receiving an 'invalid credentials' error despite successful password reset process. This issue affects users in the production \u2013 US region. Authentication cache was not refreshing after password updates, causing login failures. In some cases, clearing the authentication cache and restarting the authentication service may resolve the issue automatically. If not, users can try resetting their password and attempting to log in again. Password reset email received and password reset is successful, but login attempt fails with authentication error Authentication cache was not refreshing after password updates Digital Safe Production \u2013 US Region Restart the authentication service Clear the authentication cache and restart the authentication service if issues persist password reset login failure authentication error issue: users unable to log in after password reset. | environment: production \u2013 us region | description: multiple users reported that they were unable to log in after performing a password reset. users receive an \u201cinvalid credentials\u201d error even though the password reset process completed successfully. | symptoms: password reset email received password reset successful login attempt fails with authentication error | troubleshooting: verified user credentials stored in the authentication database. checked identity provider integration logs. confirmed that the password reset api successfully updated the password. investigated authentication service logs. identified mismatch between the authentication cache and database records. cleared authentication cache. restarted authentication service. | root cause observed: authentication cache was not refreshing after password updates. issue: payment transactions sometimes fail. | description: payment transactions sometimes fail. customer says the payment did not go through for some users. | troubleshooting: \u2022checked logs quickly \u2022no errors found | root cause observed: na issue: user unable to log in. | description: user unable to log in. login problem reported. | troubleshooting: \u2022 reset password \u2022 asked user to try again | root cause observed: na issue: document preview fails. | description: document preview fails. customer mentioned that preview sometimes works. | troubleshooting: restarted application service. | root cause observed: na issue: emails not being sent. | description: emails not being sent. customer said notification emails are delayed. | troubleshooting: \u2022checked email queue \u2022looked normal | root cause observed: na issue: api requests failing randomly. | description: api requests failing randomly. customer mentioned intermittent failures. | troubleshooting: restarted gateway service | root cause observed: na issue: app crashes during login. | description: app crashes during login. | troubleshooting: asked user to reinstall app. issue: messages delayed. | description: messages delayed. After clearing the authentication cache and restarting the authentication service, users were able to log in successfully. Verified user credentials stored in the authentication database. Checked identity provider integration logs. Confirmed that the password reset API successfully updated the password. Investigated authentication service logs. Identified mismatch between the authentication cache and database records. Cleared authentication cache. Restarted authentication service. Issue resolved automatically. \u2022Checked logs quickly\n\u2022No errors found User logged in successfully. \u2022 Reset password\n\u2022 Asked user to try again Preview started working again. Restarted application service. Issue resolved later automatically. \u2022Checked email queue\n\u2022Looked normal Failures stopped. Restarted gateway service User confirmed issue fixed. Asked user to reinstall app.",
     "_cluster_vec": [
       -0.03695113956928253,
@@ -834,33 +780,7 @@
     ]
   },
   {
-    "title": "Portal Page Loading Issues",
-    "summary": "The portal page may not load properly, causing a spinning wheel or slow loading times. This can impact users' ability to access important information and perform tasks.",
-    "symptoms": [
-      "File upload fails immediately for files over 100 MB",
-      "Reports loading slowly"
-    ],
-    "applies_to": [
-      "Digital Safe"
-    ],
-    "resolution": [
-      "Restart the browser and try again",
-      "Verify that browser cache is clear and try again",
-      "If unresolved, ask the user to refresh the page or try again later"
-    ],
-    "cause": "The issue may be caused by a browser-related problem, such as a slow connection or outdated browser version.",
-    "additional_info": "Edge cases include users experiencing issues with search response times. In these cases, clearing browser cache and refreshing the page can help resolve the issue.",
-    "internal_to_smarsh": "",
-    "keyword_variations": [
-      "portal not loading",
-      "browser issue"
-    ],
-    "visibility": "Visible in Internal App",
-    "validation_state": "Not Validated",
-    "keywords": [
-      "portal not loading",
-      "browser issue"
-    ],
+    "kb_id": "56376da6469d4bb2bda923be803c3aa9",
     "_retrieval_text": "Portal Page Loading Issues The portal page may not load properly, causing a spinning wheel or slow loading times. This can impact users' ability to access important information and perform tasks. The issue may be caused by a browser-related problem, such as a slow connection or outdated browser version. Edge cases include users experiencing issues with search response times. In these cases, clearing browser cache and refreshing the page can help resolve the issue. File upload fails immediately for files over 100 MB Reports loading slowly Digital Safe Restart the browser and try again Verify that browser cache is clear and try again If unresolved, ask the user to refresh the page or try again later portal not loading browser issue issue: user reported that the portal page is not loading properly. | description: user reported that the portal page is not loading properly. customer said the page keeps spinning. possibly browser issue. | troubleshooting: \u2022asked user to refresh page \u2022asked user to try again later | root cause observed: user confirmed it worked later. issue: reports loading slowly. | description: reports loading slowly. customer reported delay. | troubleshooting: suggested clearing browser cache | root cause observed: browser cache issue: search response slow. | description: search response slow. \u2022Asked user to refresh page\n\u2022Asked user to try again later Customer confirmed improvement. Suggested clearing browser cache",
     "_cluster_vec": [
       0.054101914167404175,
@@ -1250,32 +1170,7 @@
     ]
   },
   {
-    "title": "Backup Jobs Fail for Files Over 100 MB",
-    "summary": "Invoices may not generate due to failed backups, resulting in data loss and potential revenue impact.",
-    "symptoms": [
-      "File upload fails immediately for files over 100 MB",
-      "Backup jobs fail without generating error messages"
-    ],
-    "applies_to": [
-      "Digital Safe"
-    ],
-    "resolution": [
-      "Restart the backup service to ensure a clean start.",
-      "Verify that the file size limit is set correctly and adjust if necessary."
-    ],
-    "cause": "The issue occurs when files exceed the configured size limit, causing the backup service to fail.",
-    "additional_info": "Edge cases: If the backup job fails due to network issues or disk space constraints, restart the service after resolving the underlying cause. Additionally, ensure that the role and queue are updated correctly to avoid further failures.",
-    "internal_to_smarsh": "",
-    "keyword_variations": [
-      "large file upload",
-      "backup failure"
-    ],
-    "visibility": "Visible in Internal App",
-    "validation_state": "Not Validated",
-    "keywords": [
-      "large file upload",
-      "backup failure"
-    ],
+    "kb_id": "ed9297a2e337475da5898136975056f3",
     "_retrieval_text": "Backup Jobs Fail for Files Over 100 MB Invoices may not generate due to failed backups, resulting in data loss and potential revenue impact. The issue occurs when files exceed the configured size limit, causing the backup service to fail. Edge cases: If the backup job fails due to network issues or disk space constraints, restart the service after resolving the underlying cause. Additionally, ensure that the role and queue are updated correctly to avoid further failures. File upload fails immediately for files over 100 MB Backup jobs fail without generating error messages Digital Safe Restart the backup service to ensure a clean start. Verify that the file size limit is set correctly and adjust if necessary. large file upload backup failure issue: invoices not generating. | description: invoices not generating. backup failed for customer environment. | troubleshooting: restarted backup service. issue: backup jobs failing. | description: backup jobs failing. | troubleshooting: checked queue quickly. Backup succeeded next run. Restarted backup service. Role updated later. Checked queue quickly.",
     "_cluster_vec": [
       -0.04138728603720665,
@@ -1665,36 +1560,7 @@
     ]
   },
   {
-    "template_type": "how_to",
-    "title": "How to Configure Archive Retention Policy",
-    "objective": "Configure a 7-year retention policy for supervised archives in your Enterprise Archive production environment.",
-    "applies_to": [
-      "Enterprise Archive",
-      "Production - US"
-    ],
-    "steps": [
-      "Open the admin settings and review the current retention profile.",
-      "Set the archive retention policy to 7 years."
-    ],
-    "additional_info": "Verify that the updated policy is applied and confirm the changes in the audit view.",
-    "internal_to_smarsh": "",
-    "keyword_variations": [
-      "archive retention",
-      "retention policy"
-    ],
-    "visibility": "Visible in Internal App",
-    "validation_state": "Not Validated",
-    "summary": "Configure a 7-year retention policy for supervised archives in your Enterprise Archive production environment.",
-    "resolution": [
-      "Open the admin settings and review the current retention profile.",
-      "Set the archive retention policy to 7 years."
-    ],
-    "symptoms": [],
-    "cause": "",
-    "keywords": [
-      "archive retention",
-      "retention policy"
-    ],
+    "kb_id": "bc93dff9879441b381bfb6d589dfe25a",
     "_retrieval_text": "how_to How to Configure Archive Retention Policy Configure a 7-year retention policy for supervised archives in your Enterprise Archive production environment. Configure a 7-year retention policy for supervised archives in your Enterprise Archive production environment. Verify that the updated policy is applied and confirm the changes in the audit view. Enterprise Archive Production - US Open the admin settings and review the current retention profile. Set the archive retention policy to 7 years. Open the admin settings and review the current retention profile. Set the archive retention policy to 7 years. archive retention retention policy issue: how to configure archive retention policy | product: enterprise archive | severity: medium | environment: production - us | topic: configuration | subtopic: retention | description: steps to set a 7 year retention policy for supervised archives. | troubleshooting: open admin settings and review retention profile issue: how do i update retention settings for archive users | product: enterprise archive | severity: medium | environment: production - us | topic: configuration | subtopic: retention | description: procedure to update archive retention value for compliance. | troubleshooting: review existing policy assignment navigate to administration > retention and set policy to 7 years open admin settings and review retention profile update retention policy value and save changes review existing policy assignment verify policy is applied confirm updated policy in audit view",
     "_cluster_vec": [
       0.04487975686788559,
@@ -2084,28 +1950,7 @@
     ]
   },
   {
-    "template_type": "qa",
-    "title": "What fields are included in the compliance export report?",
-    "applies_to": [
-      "Enterprise Archive"
-    ],
-    "answer": "The compliance export report includes a range of fields, including message metadata and content. The specific fields included may vary depending on your organization's configuration and compliance requirements.",
-    "additional_info": "For more information on customizing your export report, refer to our documentation on [link].",
-    "internal_to_smarsh": "",
-    "keyword_variations": [
-      "compliance export",
-      "export report fields"
-    ],
-    "visibility": "Visible in Internal App",
-    "validation_state": "Not Validated",
-    "summary": "The compliance export report includes a range of fields, including message metadata and content. The specific fields included may vary depending on your organization's configuration and compliance requirements.",
-    "resolution": [],
-    "symptoms": [],
-    "cause": "",
-    "keywords": [
-      "compliance export",
-      "export report fields"
-    ],
+    "kb_id": "92bba68586f9491e99011ea1957cac71",
     "_retrieval_text": "qa What fields are included in the compliance export report? The compliance export report includes a range of fields, including message metadata and content. The specific fields included may vary depending on your organization's configuration and compliance requirements. The compliance export report includes a range of fields, including message metadata and content. The specific fields included may vary depending on your organization's configuration and compliance requirements. For more information on customizing your export report, refer to our documentation on [link]. Enterprise Archive compliance export export report fields issue: what is included in the export report? | product: enterprise archive | severity: low | environment: production - eu | topic: reporting | subtopic: export | description: question about which fields are included in the compliance export report. issue: why does export report include message metadata only? | product: enterprise archive | severity: low | environment: production - eu | topic: reporting | subtopic: export | description: general question on export report behavior and field scope.",
     "_cluster_vec": [
       0.10096609592437744,
