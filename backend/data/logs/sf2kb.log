@@ -173,3 +173,24 @@ UnicodeDecodeError: 'utf-8' codec can't decode byte 0xbd in position 700: invali
 2026-04-12 15:37:21,549 | LOADER | INFO | CSV Columns (utf-8-sig): ['Case ID', 'Issue', 'Environment', 'Description', 'Symptoms', 'Troubleshooting steps', 'Root Cause', 'Resolution', 'Next Steps', 'Product', 'Severity Level', 'Topic', 'SubTopic']
 2026-04-12 15:37:21,549 | LOADER | INFO | Loaded CSV using encoding: utf-8-sig
 2026-04-12 15:37:21,549 | LOADER | INFO | Total records loaded: 4
+2026-04-13 19:04:09,417 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:04:12,945 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:04:23,574 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:04:27,090 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:04:30,703 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:04:34,285 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:07:12,583 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:07:27,205 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:07:30,797 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:07:34,420 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:08:11,988 | backend.cache.kb_cache | DEBUG | Loaded 2 KBs into cache
+2026-04-13 19:08:11,989 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:08:11,991 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:08:11,992 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:08:11,992 | backend.cache.kb_cache | DEBUG | Updated KB in cache: Article
+2026-04-13 19:09:28,578 | backend.api.app | DEBUG | Search query: 'Docu'
+2026-04-13 19:09:29,434 | backend.api.app | DEBUG | Search query: 'Document'
+2026-04-13 19:09:32,712 | backend.api.app | DEBUG | RAG returned 2 results
+2026-04-13 19:09:32,712 | backend.api.app | INFO | Search 'Docu' returned 2 approved results
+2026-04-13 19:09:33,717 | backend.api.app | DEBUG | RAG returned 1 results
+2026-04-13 19:09:33,717 | backend.api.app | INFO | Search 'Document' returned 1 approved results
