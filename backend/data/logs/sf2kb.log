@@ -194,3 +194,49 @@ UnicodeDecodeError: 'utf-8' codec can't decode byte 0xbd in position 700: invali
 2026-04-13 19:09:32,712 | backend.api.app | INFO | Search 'Docu' returned 2 approved results
 2026-04-13 19:09:33,717 | backend.api.app | DEBUG | RAG returned 1 results
 2026-04-13 19:09:33,717 | backend.api.app | INFO | Search 'Document' returned 1 approved results
+2026-04-13 19:23:12,507 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:23:29,731 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:23:33,255 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:23:50,777 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:23:55,581 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:24:16,410 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:27:20,599 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:29:11,313 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:29:30,349 | backend.cache.kb_cache | DEBUG | Loaded 2 KBs into cache
+2026-04-13 19:29:30,350 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:29:30,351 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:29:30,353 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:29:30,353 | backend.cache.kb_cache | DEBUG | Updated KB in cache: Article
+2026-04-13 19:49:30,224 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:50:08,551 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:50:22,671 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:50:39,096 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache
+2026-04-13 19:53:20,848 | backend.cache.kb_cache | DEBUG | Loaded 2 KBs into cache
+2026-04-13 19:53:20,849 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:53:20,850 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:53:20,851 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:53:20,851 | backend.cache.kb_cache | DEBUG | Updated KB in cache: Article
+2026-04-13 19:59:21,854 | backend.cache.kb_cache | DEBUG | Loaded 2 KBs into cache
+2026-04-13 19:59:21,856 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:59:21,857 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:59:21,858 | backend.cache.kb_cache | DEBUG | Loaded 1 KBs into cache
+2026-04-13 19:59:21,858 | backend.cache.kb_cache | DEBUG | Updated KB in cache: Article
+2026-04-13 20:01:31,400 | backend.api.app | DEBUG | Search query: 'login' top_k=10 candidate_k=40 template=None applies_to=None approval_status=all
+2026-04-13 20:01:31,572 | backend.api.app | DEBUG | Search query: 'login' top_k=10 candidate_k=40 template=None applies_to=None approval_status=all
+2026-04-13 20:01:35,796 | backend.api.app | DEBUG | RAG returned 1 results
+2026-04-13 20:01:35,797 | backend.api.app | INFO | Search 'login' returned 1 approved results
+2026-04-13 20:01:35,917 | backend.api.app | DEBUG | RAG returned 1 results
+2026-04-13 20:01:35,917 | backend.api.app | INFO | Search 'login' returned 1 approved results
+2026-04-13 20:06:05,642 | backend.api.app | DEBUG | Search query: 'logib' top_k=10 candidate_k=40 template=None applies_to=None approval_status=approved
+2026-04-13 20:06:05,747 | backend.api.app | DEBUG | Search query: 'logib' top_k=10 candidate_k=40 template=None applies_to=None approval_status=approved
+2026-04-13 20:06:05,800 | backend.api.app | DEBUG | RAG returned 3 results
+2026-04-13 20:06:05,800 | backend.api.app | INFO | Search 'logib' returned 3 approved results
+2026-04-13 20:06:05,804 | backend.api.app | DEBUG | RAG returned 3 results
+2026-04-13 20:06:05,804 | backend.api.app | INFO | Search 'logib' returned 3 approved results
+2026-04-13 20:06:59,395 | backend.api.app | DEBUG | Search query: 'logib' top_k=10 candidate_k=40 template=None applies_to=None approval_status=needs_edits
+2026-04-13 20:06:59,499 | backend.api.app | DEBUG | RAG returned 3 results
+2026-04-13 20:06:59,499 | backend.api.app | INFO | Search 'logib' returned 0 approved results
+2026-04-13 20:06:59,756 | backend.api.app | DEBUG | Search query: 'logib' top_k=10 candidate_k=40 template=None applies_to=None approval_status=needs_edits
+2026-04-13 20:06:59,789 | backend.api.app | DEBUG | RAG returned 3 results
+2026-04-13 20:06:59,789 | backend.api.app | INFO | Search 'logib' returned 0 approved results
+2026-04-13 20:16:51,755 | backend.cache.kb_cache | DEBUG | Loaded 6 KBs into cache

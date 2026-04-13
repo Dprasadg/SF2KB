@@ -8,3 +8,4 @@ ollama
 python-multipart
 fastapi
 uvicorn
+rank-bm25

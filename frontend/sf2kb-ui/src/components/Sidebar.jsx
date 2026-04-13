@@ -9,7 +9,7 @@ const navItems = [
 
 export default function Sidebar({ setView, currentView }) {
   return (
-    <aside className="hidden h-screen w-64 bg-gradient-to-b from-gray-900 to-gray-800 p-5 text-white shadow-xl lg:block">
+    <aside className="hidden min-h-screen w-64 bg-gradient-to-b from-gray-900 to-gray-800 p-5 text-white shadow-xl lg:block">
       <h1 className="mb-8 text-2xl font-bold tracking-tight">KB Intelligence</h1>
 
       <nav>
