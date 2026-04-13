@@ -146,15 +146,49 @@ def search(request: QueryRequest):
         include_scores=True,
     )
 
+    # Load live KB states from JSON to check current approval status
+    # (FAISS metadata may be stale after approval changes)
+    kb_by_title = {}
+    kb_by_id = {}
+    try:
+        kb_path = Path(KB_STORE_PATH)
+        if kb_path.exists():
+            with kb_path.open(encoding="utf-8") as f:
+                all_kbs = json.load(f)
+                for kb in all_kbs:
+                    if isinstance(kb, dict):
+                        if kb.get("kb_id"):
+                            kb_by_id[str(kb.get("kb_id"))] = kb
+                        if kb.get("title"):
+                            kb_by_title[str(kb.get("title"))] = kb
+    except Exception:
+        pass
+
     results = []
     for item in raw_results:
         kb = item.get("kb", {}) if isinstance(item, dict) else item
-        if not isinstance(kb, dict) or not _is_approved(kb):
+        if not isinstance(kb, dict):
+            continue
+
+        # Use live KB state from JSON instead of stale FAISS metadata
+        # Try matching by kb_id first, then by title
+        kb_id = str(kb.get("kb_id", "")).strip() if kb.get("kb_id") else ""
+        kb_live = kb_by_id.get(kb_id) if kb_id else None
+        
+        if not kb_live:
+            # Fallback to matching by title
+            title = str(kb.get("title", "")).strip() if kb.get("title") else ""
+            kb_live = kb_by_title.get(title, kb)
+        
+        if not kb_live:
+            kb_live = kb
+
+        if not _is_approved(kb_live):
             continue
 
         results.append(
             {
-                "kb": _public_kb(kb),
+                "kb": _public_kb(kb_live),
                 "score": item.get("score") if isinstance(item, dict) else None,
                 "semantic_score": item.get("semantic_score") if isinstance(item, dict) else None,
                 "keyword_score": item.get("keyword_score") if isinstance(item, dict) else None,

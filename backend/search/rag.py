@@ -1,5 +1,6 @@
 import numpy as np
 import re
+from typing import List, Set
 
 
 def keyword_score(query, text):
@@ -9,11 +10,11 @@ def keyword_score(query, text):
     return len(overlap) / (len(query_words) + 1)
 
 
-def _tokenize(text: str) -> set[str]:
+def _tokenize(text: str) -> Set[str]:
     return set(re.findall(r"[a-z0-9]+", str(text).lower()))
 
 
-def _as_list(value) -> list[str]:
+def _as_list(value) -> List[str]:
     if isinstance(value, list):
         return [str(item).strip() for item in value if str(item).strip()]
     if isinstance(value, str) and value.strip():
